@@ -4,3 +4,14 @@ obj
 
 # mstest test results
 TestResults
+
+# Visual Studio user options files
+
+*.suo
+*.user
+
+# Raw DLL files
+*.dll
+
+# Debug files
+*.pdb
