@@ -20,3 +20,5 @@ Descomentar c�digo: Ctrl+K+U
 Coment�rios para documenta��o: ///
 
 Selecionar texto na "vertical": Selecionar texto + Shift + Alt + Seta
+
+Abrir janela Immediate: Ctrl+Alt+I
