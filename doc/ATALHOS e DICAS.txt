@@ -1,0 +1,21 @@
+Compilar solução: Ctrl+Shift+B
+Suprimir todo código: Ctrl+M+L
+Iniciar aplicação depurando: F5
+Iniciar aplicação sem depurar: Ctrl+F5
+Agrupar blocos de código, para facilitar a leitura: #region #endregion
+Visualizar o código de um aspx: F7
+
+Depuração:
+Próximo passo: F10
+Entrar no escopo: F11
+Parar depuração: Shift+F5
+Reiniciar depuração: Ctrl+Shift+F5
+
+Abrir a definição de uma classe/membro: F12
+
+Identar o código: Ctrl+K+D
+Comentar código: Ctrl+K+C
+Descomentar código: Ctrl+K+U
+Comentários para documentação: ///
+
+Selecionar texto na "vertical": Selecionar texto + Shift + Alt + Seta
