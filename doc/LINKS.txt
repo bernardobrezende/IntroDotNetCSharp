@@ -1,5 +1,5 @@
 Visual Studio Express:
 	http://www.microsoft.com/visualstudio/en-us/products/2010-editions/express
 
-Nomenclatura:
+Padrão de Nomenclatura da Microsoft:
 	http://msdn.microsoft.com/en-us/library/ms229002.aspx
