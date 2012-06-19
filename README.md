@@ -5,7 +5,7 @@ Code samples for .NET's introductory course.
 
 ## Contents
 
-1. Day-1 - Hello World samples for Console, Web and Desktop applications.
+1. Day-1 - Hello World samples for Console and Web applications.
 
 ## Documentation
 
