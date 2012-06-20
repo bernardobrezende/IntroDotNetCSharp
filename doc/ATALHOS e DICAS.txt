@@ -24,3 +24,5 @@ Selecionar texto na "vertical": Selecionar texto + Shift + Alt + Seta
 Abrir janela Immediate: Ctrl+Alt+I
 
 Setar linha atual de depuração: Ctrl+Shit+F10
+
+Abrir auxiliar de inclusão de namespaces: Ctrl + . (em cima da palavra não-reconhecida)
