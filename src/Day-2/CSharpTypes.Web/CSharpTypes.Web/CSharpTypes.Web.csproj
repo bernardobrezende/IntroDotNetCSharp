@@ -57,6 +57,7 @@
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Exercise1.aspx" />
+    <Content Include="Exercise2.aspx" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
@@ -122,10 +123,18 @@
     <Compile Include="Exercise1.aspx.designer.cs">
       <DependentUpon>Exercise1.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Exercise2.aspx.cs">
+      <DependentUpon>Exercise2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Exercise2.aspx.designer.cs">
+      <DependentUpon>Exercise2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Money.cs" />
+    <Compile Include="MoneyForExercise2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
