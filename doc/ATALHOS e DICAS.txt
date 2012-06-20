@@ -1,21 +1,28 @@
-Compilar solução: Ctrl+Shift+B
-Suprimir todo código: Ctrl+M+L
-Iniciar aplicação depurando: F5
-Iniciar aplicação sem depurar: Ctrl+F5
-Agrupar blocos de código, para facilitar a leitura: #region #endregion
-Visualizar o código de um aspx: F7
+Compilar soluï¿½ï¿½o: Ctrl+Shift+B
+Suprimir todo cï¿½digo: Ctrl+M+L
+Iniciar aplicaï¿½ï¿½o depurando: F5
+Iniciar aplicaï¿½ï¿½o sem depurar: Ctrl+F5
+Agrupar blocos de cï¿½digo, para facilitar a leitura: #region #endregion
+Visualizar o cï¿½digo de um aspx: F7
 
-Depuração:
-Próximo passo: F10
+Depuraï¿½ï¿½o:
+Prï¿½ximo passo: F10
 Entrar no escopo: F11
-Parar depuração: Shift+F5
-Reiniciar depuração: Ctrl+Shift+F5
+Parar depuraï¿½ï¿½o: Shift+F5
+Reiniciar depuraï¿½ï¿½o: Ctrl+Shift+F5
+Adicionar Breakpoint na linha: F9
 
-Abrir a definição de uma classe/membro: F12
+Abrir a definiï¿½ï¿½o de uma classe/membro: F12
 
-Identar o código: Ctrl+K+D
-Comentar código: Ctrl+K+C
-Descomentar código: Ctrl+K+U
-Comentários para documentação: ///
+Identar o cï¿½digo: Ctrl+K+D
+Comentar cï¿½digo: Ctrl+K+C
+Descomentar cï¿½digo: Ctrl+K+U
+Comentï¿½rios para documentaï¿½ï¿½o: ///
 
 Selecionar texto na "vertical": Selecionar texto + Shift + Alt + Seta
+
+Abrir janela Immediate: Ctrl+Alt+I
+
+Setar linha atual de depuraÃ§Ã£o: Ctrl+Shit+F10
+
+Abrir auxiliar de inclusÃ£o de namespaces: Ctrl + . (em cima da palavra nÃ£o-reconhecida)

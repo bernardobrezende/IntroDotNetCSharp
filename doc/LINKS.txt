@@ -1,5 +1,11 @@
 Visual Studio Express:
 	http://www.microsoft.com/visualstudio/en-us/products/2010-editions/express
 
-Nomenclatura:
+Padrão de Nomenclatura da Microsoft:
 	http://msdn.microsoft.com/en-us/library/ms229002.aspx
+
+Download da especificação do C# 4:
+	http://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&ved=0CFkQFjAB&url=http%3A%2F%2Fdownload.microsoft.com%2Fdownload%2F3%2F8%2F8%2F388e7205-bc10-4226-b2a8-75351c669b09%2Fcsharp%2520language%2520specification.doc&ei=ZPzgT-DCJo-m8gSLy4GyDQ&usg=AFQjCNGXik09_Rn-k0FGHG-A6v1EX3RLyA&sig2=Q6GAea1xPF2hxRh0yDa36g
+
+Build (evento com vídeos):
+	http://www.buildwindows.com/
