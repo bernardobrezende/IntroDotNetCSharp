@@ -9,3 +9,9 @@ Download da especificação do C# 4 em HTML:
 
 Build (evento de desenvolvimento com vídeos gratuítos):
 	http://www.buildwindows.com/
+
+Tabela de códigos das culturas (línguas) para .NET:
+	http://msdn.microsoft.com/en-us/library/ee825488(v=cs.20).aspx
+
+Poster de atalhos do Visual Studio:
+	http://www.microsoft.com/en-us/download/details.aspx?id=13189

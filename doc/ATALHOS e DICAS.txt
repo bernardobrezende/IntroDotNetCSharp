@@ -1,23 +1,23 @@
-Compilar solu��o: Ctrl+Shift+B
-Suprimir todo c�digo: Ctrl+M+L
-Iniciar aplica��o depurando: F5
-Iniciar aplica��o sem depurar: Ctrl+F5
-Agrupar blocos de c�digo, para facilitar a leitura: #region #endregion
-Visualizar o c�digo de um aspx: F7
+﻿Compilar solução: Ctrl+Shift+B
+Suprimir todo código: Ctrl+M+L
+Iniciar aplicação depurando: F5
+Iniciar aplicação sem depurar: Ctrl+F5
+Agrupar blocos de código, para facilitar a leitura: #region #endregion
+Visualizar o código de um aspx: F7
 
-Depura��o:
-Pr�ximo passo: F10
+Depuração:
+Próximo passo: F10
 Entrar no escopo: F11
-Parar depura��o: Shift+F5
-Reiniciar depura��o: Ctrl+Shift+F5
+Parar depuração: Shift+F5
+Reiniciar depuração: Ctrl+Shift+F5
 Adicionar Breakpoint na linha: F9
 
-Abrir a defini��o de uma classe/membro: F12
+Abrir a definição de uma classe/membro: F12
 
-Identar o c�digo: Ctrl+K+D
-Comentar c�digo: Ctrl+K+C
-Descomentar c�digo: Ctrl+K+U
-Coment�rios para documenta��o: ///
+Identar o código: Ctrl+K+D
+Comentar código: Ctrl+K+C
+Descomentar código: Ctrl+K+U
+Comentários para documentação: ///
 
 Selecionar texto na "vertical": Selecionar texto + Shift + Alt + Seta
 
@@ -26,3 +26,9 @@ Abrir janela Immediate: Ctrl+Alt+I
 Setar linha atual de depuração: Ctrl+Shit+F10
 
 Abrir auxiliar de inclusão de namespaces: Ctrl + . (em cima da palavra não-reconhecida)
+
+Renomear uma variável em todos pontos do código: renomear variável e Ctrl + .
+
+Gerar bloco foreach automaticamente: Escreva "foreach" + tab + tab
+
+Voltar para o último cursor de digitação: Ctrl -
