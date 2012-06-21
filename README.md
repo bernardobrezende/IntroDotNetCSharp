@@ -9,6 +9,7 @@ Code samples for .NET's introductory course.
 2. Day-2 - CSharp types samples using Web Application.
            - Exercise 1 solved samples.
            - Exercise 2 solved samples.
+3. Day-3 - CSharp iterations blocks (for, foreach, while, do while) and strings code samples using Web Application.
 
 ## Documentation
 
