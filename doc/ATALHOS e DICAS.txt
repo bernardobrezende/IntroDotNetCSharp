@@ -32,3 +32,5 @@ Renomear uma variável em todos pontos do código: renomear variável e Ctrl + .
 Gerar bloco foreach automaticamente: Escreva "foreach" + tab + tab
 
 Voltar para o último cursor de digitação: Ctrl -
+
+Deixar editor de código em full screen: Shift + Alt + Enter
