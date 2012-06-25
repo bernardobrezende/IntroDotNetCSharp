@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Web Developer Express 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpInterfacesInheritance.Web", "CSharpInterfacesInheritance.Web\CSharpInterfacesInheritance.Web.csproj", "{538D081C-2544-46D0-95DF-A72FE0ABB103}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{538D081C-2544-46D0-95DF-A72FE0ABB103}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{538D081C-2544-46D0-95DF-A72FE0ABB103}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{538D081C-2544-46D0-95DF-A72FE0ABB103}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{538D081C-2544-46D0-95DF-A72FE0ABB103}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
