@@ -15,3 +15,16 @@ Tabela de códigos das culturas (línguas) para .NET:
 
 Poster de atalhos do Visual Studio:
 	http://www.microsoft.com/en-us/download/details.aspx?id=13189
+
+IDE online .NET:
+	http://www.coderun.com/
+
+Hospedagem gratuita .NET:
+	https://appharbor.com/
+
+Portal com vários Extension Methods:
+	http://extensionmethod.net/
+
+Tutoriais para utilizar Entity Framework no Oracle:
+	http://www.oracle.com/technetwork/issue-archive/2011/11-sep/o51odt-453447.html
+	http://download.oracle.com/oll/obe/EntityFrameworkOBE/EntityFrameworkOBE.htm

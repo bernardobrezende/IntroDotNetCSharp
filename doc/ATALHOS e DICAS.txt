@@ -34,3 +34,5 @@ Gerar bloco foreach automaticamente: Escreva "foreach" + tab + tab
 Voltar para o último cursor de digitação: Ctrl -
 
 Deixar editor de código em full screen: Shift + Alt + Enter
+
+Ir para uma linha específica do código: Ctrl + G

@@ -13,6 +13,7 @@ Code samples for .NET's introductory course.
 4. Day-4 - CSharp classes samples using Web Application.
 5. Day-5 - CSharp classes inheritances using Web Application.
 6. Day-6 - CSharp Linq To XML source codes samples.
+7. Day-7 - CSharp Property Indexers, Extension Methods and Entity Framework introduction.
 
 ## Documentation
 
