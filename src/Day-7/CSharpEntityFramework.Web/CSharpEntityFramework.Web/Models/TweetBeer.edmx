@@ -72,7 +72,7 @@
         <EntityContainer Name="TweetBeerContainer" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Beer" EntityType="TweetBeer.Beer" />
         </EntityContainer>
-        <EntityType Name="Beer">
+        <EntityType Name="Beer" Abstract="true">
           <Key>
             <PropertyRef Name="Id" />
           </Key>

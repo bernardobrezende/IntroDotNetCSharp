@@ -122,6 +122,8 @@
     </Compile>
     <Compile Include="Models\Beer.cs" />
     <Compile Include="Models\BeerNotOpenedException.cs" />
+    <Compile Include="Models\PremiumBeer.cs" />
+    <Compile Include="Models\StoutBeer.cs" />
     <Compile Include="Models\TweetBeer.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

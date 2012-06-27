@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using CSharpEntityFramework.Web.Models;
 
 namespace CSharpEntityFramework.Web
@@ -12,7 +7,7 @@ namespace CSharpEntityFramework.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Beer b = new Beer("Primator");
+            Beer b = new PremiumBeer();
         }
     }
 }

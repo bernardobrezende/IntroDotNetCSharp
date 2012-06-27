@@ -108,32 +108,8 @@ namespace CSharpEntityFramework.Web.Models
     [DataContractAttribute(IsReference=true)]
     [KnownTypeAttribute(typeof(StoutBeer))]
     [KnownTypeAttribute(typeof(PremiumBeer))]
-    public partial class Beer : EntityObject
+    public abstract partial class Beer : EntityObject
     {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new Beer object.
-        /// </summary>
-        /// <param name="id">Initial value of the Id property.</param>
-        /// <param name="name">Initial value of the Name property.</param>
-        /// <param name="country">Initial value of the Country property.</param>
-        /// <param name="weight">Initial value of the Weight property.</param>
-        /// <param name="initialWeight">Initial value of the InitialWeight property.</param>
-        /// <param name="isOpened">Initial value of the IsOpened property.</param>
-        public static Beer CreateBeer(global::System.Int64 id, global::System.String name, global::System.String country, global::System.Double weight, global::System.Double initialWeight, global::System.Boolean isOpened)
-        {
-            Beer beer = new Beer();
-            beer.Id = id;
-            beer.Name = name;
-            beer.Country = country;
-            beer.Weight = weight;
-            beer.InitialWeight = initialWeight;
-            beer.IsOpened = isOpened;
-            return beer;
-        }
-
-        #endregion
         #region Primitive Properties
     
         /// <summary>

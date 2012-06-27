@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace CSharpEntityFramework.Web.Models
 {
-    public partial class Beer
+    public abstract partial class Beer
     {
         #region Properties
 
         public IList<string> Errors { get; set; }
-        //public abstract bool HasAlcohol { get; set; }
+        public abstract bool HasAlcohol { get; set; }
 
         #endregion
 
