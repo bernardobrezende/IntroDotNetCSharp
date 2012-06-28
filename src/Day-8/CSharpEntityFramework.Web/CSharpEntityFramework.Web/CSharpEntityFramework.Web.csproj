@@ -59,6 +59,9 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="DrinkBeer.aspx" />
+    <Content Include="CreateBeer.aspx" />
+    <Content Include="FavoriteBeers.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Models\TweetBeer.edmx.sql" />
     <Content Include="Styles\Site.css" />
@@ -67,6 +70,7 @@
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="UserControls\ucBeerList.ascx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -111,6 +115,27 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DrinkBeer.aspx.cs">
+      <DependentUpon>DrinkBeer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DrinkBeer.aspx.designer.cs">
+      <DependentUpon>DrinkBeer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateBeer.aspx.cs">
+      <DependentUpon>CreateBeer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateBeer.aspx.designer.cs">
+      <DependentUpon>CreateBeer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FavoriteBeers.aspx.cs">
+      <DependentUpon>FavoriteBeers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FavoriteBeers.aspx.designer.cs">
+      <DependentUpon>FavoriteBeers.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -144,6 +169,13 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucBeerList.ascx.cs">
+      <DependentUpon>ucBeerList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucBeerList.ascx.designer.cs">
+      <DependentUpon>ucBeerList.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

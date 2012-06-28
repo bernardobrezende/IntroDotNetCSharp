@@ -13,5 +13,11 @@ namespace CSharpEntityFramework.Web
         {
 
         }
+
+        protected void btnRedirect_Click(object sender, EventArgs e)
+        {
+            bool b = IsPostBack;
+            Response.Redirect("About.aspx?p1=teste&p2=" + DateTime.Now);
+        }
     }
 }

@@ -6,10 +6,11 @@
 <head runat="server">
     <title></title>
 </head>
-<body>
+<body>    
     <form id="form1" runat="server">
     <div>
-    
+        <asp:Button ID="btnRedirect" runat="server" Text="Button" 
+            onclick="btnRedirect_Click" />    
     </div>
     </form>
 </body>
