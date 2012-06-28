@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
-    CodeBehind="EntityFrameworkPage.aspx.cs" Inherits="CSharpEntityFramework.Web._Default" %>
+    CodeBehind="EntityFrameworkPage.aspx.cs" Inherits="CSharpEntityFramework.Web._EntityFrameworkPage" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>

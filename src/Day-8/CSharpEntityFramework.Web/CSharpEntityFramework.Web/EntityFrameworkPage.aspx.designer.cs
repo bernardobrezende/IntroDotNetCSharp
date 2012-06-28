@@ -8,9 +8,10 @@
 //------------------------------------------------------------------------------
 
 namespace CSharpEntityFramework.Web {
-    
-    
-    public partial class _Default {
+
+
+    public partial class _EntityFrameworkPage
+    {
         
         /// <summary>
         /// Button1 control.

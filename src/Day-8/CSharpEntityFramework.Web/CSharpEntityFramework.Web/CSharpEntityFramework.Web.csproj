@@ -59,6 +59,7 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="Default.aspx" />
     <Content Include="Models\TweetBeer.edmx.sql" />
     <Content Include="Styles\Site.css" />
     <Content Include="EntityFrameworkPage.aspx" />
@@ -109,6 +110,13 @@
     </Compile>
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="EntityFrameworkPage.aspx.cs">
       <DependentUpon>EntityFrameworkPage.aspx</DependentUpon>

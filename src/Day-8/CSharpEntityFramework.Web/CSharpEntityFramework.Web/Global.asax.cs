@@ -24,8 +24,7 @@ namespace CSharpEntityFramework.Web
 
         void Application_Error(object sender, EventArgs e)
         {
-            // Code that runs when an unhandled error occurs
-
+            // Code that runs when an unhandled error occurs            
         }
 
         void Session_Start(object sender, EventArgs e)
