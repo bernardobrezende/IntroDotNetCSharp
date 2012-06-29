@@ -15,6 +15,7 @@ Code samples for .NET's introductory course.
 6. Day-6 - CSharp Linq To XML source codes samples.
 7. Day-7 - CSharp Property Indexers, Extension Methods and Entity Framework introduction.
 8. Day-8 - CSharp Entity Framework persistence, ASP.NET Master Pages and User Controls samples.
+9. Day-9 - CSharp ViewState, Cookies, Session and ASP.NET Dynamic Data code samples.
 
 ## Documentation
 
