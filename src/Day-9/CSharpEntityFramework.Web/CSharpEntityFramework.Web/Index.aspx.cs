@@ -7,10 +7,18 @@ using System.Web.UI.WebControls;
 
 namespace CSharpEntityFramework.Web
 {
-    public partial class SiteMaster : System.Web.UI.MasterPage
+    public partial class Index : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+        }
+
+        protected void btnSetUser_Click(object sender, EventArgs e)
+        {
+            Session["userName"] = this.txtUserName.Text;
+            //Session.Abandon();
+            //Session.Clear();
         }
     }
 }

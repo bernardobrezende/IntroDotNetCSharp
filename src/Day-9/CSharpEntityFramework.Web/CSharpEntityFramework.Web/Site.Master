@@ -18,6 +18,7 @@
                 </h1>
             </div>
             <div class="loginDisplay">
+                Olá <%= Session["userName"] as string %>
                 <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
                     <AnonymousTemplate>
                         [ <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Log In</a> ]
@@ -45,7 +46,8 @@
         </div>
     </div>
     <div class="footer">
-        
+        <%= Request.Cookies["LastAccess"] != null ? 
+            Request.Cookies["LastAccess"].Value : String.Empty %>
     </div>
     </form>
 </body>

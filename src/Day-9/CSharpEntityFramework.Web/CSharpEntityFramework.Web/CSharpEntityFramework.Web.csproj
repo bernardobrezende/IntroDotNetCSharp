@@ -63,6 +63,7 @@
     <Content Include="CreateBeer.aspx" />
     <Content Include="FavoriteBeers.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="Index.aspx" />
     <Content Include="Models\TweetBeer.edmx.sql" />
     <Content Include="Styles\Site.css" />
     <Content Include="EntityFrameworkPage.aspx" />
@@ -152,6 +153,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\Beer.cs" />
     <Compile Include="Models\BeerNotOpenedException.cs" />
