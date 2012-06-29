@@ -28,3 +28,6 @@ Portal com vários Extension Methods:
 Tutoriais para utilizar Entity Framework no Oracle:
 	http://www.oracle.com/technetwork/issue-archive/2011/11-sep/o51odt-453447.html
 	http://download.oracle.com/oll/obe/EntityFrameworkOBE/EntityFrameworkOBE.htm
+
+Duração máxima de uma ASP.NET Session:
+	http://forums.asp.net/t/1401898.aspx
