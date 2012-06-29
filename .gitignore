@@ -11,7 +11,7 @@ TestResults
 *.user
 
 # Raw DLL files
-*.dll
+#*.dll
 
 # Debug files
 *.pdb
