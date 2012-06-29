@@ -16,6 +16,11 @@ using System.Xml.Serialization;
 using System.Runtime.Serialization;
 
 [assembly: EdmSchemaAttribute()]
+#region EDM Relationship Metadata
+
+[assembly: EdmRelationshipAttribute("TweetBeer", "FavoriteBeerBeer", "FavoriteBeer", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TweetBeer.Web.Models.FavoriteBeer), "Beer", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TweetBeer.Web.Models.Beer))]
+
+#endregion
 
 namespace TweetBeer.Web.Models
 {
@@ -80,6 +85,22 @@ namespace TweetBeer.Web.Models
             }
         }
         private ObjectSet<Beer> _Beer;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<FavoriteBeer> FavoriteBeerSet
+        {
+            get
+            {
+                if ((_FavoriteBeerSet == null))
+                {
+                    _FavoriteBeerSet = base.CreateObjectSet<FavoriteBeer>("FavoriteBeerSet");
+                }
+                return _FavoriteBeerSet;
+            }
+        }
+        private ObjectSet<FavoriteBeer> _FavoriteBeerSet;
 
         #endregion
         #region AddTo Methods
@@ -90,6 +111,14 @@ namespace TweetBeer.Web.Models
         public void AddToBeer(Beer beer)
         {
             base.AddObject("Beer", beer);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the FavoriteBeerSet EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToFavoriteBeerSet(FavoriteBeer favoriteBeer)
+        {
+            base.AddObject("FavoriteBeerSet", favoriteBeer);
         }
 
         #endregion
@@ -237,6 +266,179 @@ namespace TweetBeer.Web.Models
 
         #endregion
     
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("TweetBeer", "FavoriteBeerBeer", "FavoriteBeer")]
+        public FavoriteBeer FavoriteBeer
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<FavoriteBeer>("TweetBeer.FavoriteBeerBeer", "FavoriteBeer").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<FavoriteBeer>("TweetBeer.FavoriteBeerBeer", "FavoriteBeer").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<FavoriteBeer> FavoriteBeerReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<FavoriteBeer>("TweetBeer.FavoriteBeerBeer", "FavoriteBeer");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<FavoriteBeer>("TweetBeer.FavoriteBeerBeer", "FavoriteBeer", value);
+                }
+            }
+        }
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="TweetBeer", Name="FavoriteBeer")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class FavoriteBeer : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new FavoriteBeer object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="creationDate">Initial value of the CreationDate property.</param>
+        /// <param name="user">Initial value of the User property.</param>
+        public static FavoriteBeer CreateFavoriteBeer(global::System.Int32 id, global::System.DateTime creationDate, global::System.String user)
+        {
+            FavoriteBeer favoriteBeer = new FavoriteBeer();
+            favoriteBeer.Id = id;
+            favoriteBeer.CreationDate = creationDate;
+            favoriteBeer.User = user;
+            return favoriteBeer;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime CreationDate
+        {
+            get
+            {
+                return _CreationDate;
+            }
+            set
+            {
+                OnCreationDateChanging(value);
+                ReportPropertyChanging("CreationDate");
+                _CreationDate = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("CreationDate");
+                OnCreationDateChanged();
+            }
+        }
+        private global::System.DateTime _CreationDate;
+        partial void OnCreationDateChanging(global::System.DateTime value);
+        partial void OnCreationDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String User
+        {
+            get
+            {
+                return _User;
+            }
+            set
+            {
+                OnUserChanging(value);
+                ReportPropertyChanging("User");
+                _User = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("User");
+                OnUserChanged();
+            }
+        }
+        private global::System.String _User;
+        partial void OnUserChanging(global::System.String value);
+        partial void OnUserChanged();
+
+        #endregion
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("TweetBeer", "FavoriteBeerBeer", "Beer")]
+        public EntityCollection<Beer> Beer
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Beer>("TweetBeer.FavoriteBeerBeer", "Beer");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Beer>("TweetBeer.FavoriteBeerBeer", "Beer", value);
+                }
+            }
+        }
+
+        #endregion
     }
     
     /// <summary>

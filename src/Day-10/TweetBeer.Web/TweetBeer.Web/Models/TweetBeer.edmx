@@ -7,8 +7,13 @@
     <Schema Namespace="TweetBeer.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
   <EntityContainer Name="TweetBeerStoreContainer">
     <EntitySet Name="Beer" EntityType="TweetBeer.Store.Beer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FavoriteBeerSet" EntityType="TweetBeer.Store.FavoriteBeerSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Beer_StoutBeer" EntityType="TweetBeer.Store.Beer_StoutBeer" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Beer_PremiumBeer" EntityType="TweetBeer.Store.Beer_PremiumBeer" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FavoriteBeerBeer" Association="TweetBeer.Store.FavoriteBeerBeer">
+      <End Role="FavoriteBeer" EntitySet="FavoriteBeerSet" />
+      <End Role="Beer" EntitySet="Beer" />
+    </AssociationSet>
     <AssociationSet Name="FK_StoutBeer_inherits_Beer" Association="TweetBeer.Store.FK_StoutBeer_inherits_Beer">
       <End Role="Beer" EntitySet="Beer" />
       <End Role="StoutBeer" EntitySet="Beer_StoutBeer" />
@@ -27,6 +32,15 @@
     <Property Name="Country" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Weight" Type="float" Nullable="false" />
     <Property Name="InitialWeight" Type="float" Nullable="false" />
+    <Property Name="FavoriteBeer_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FavoriteBeerSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="User" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Beer_StoutBeer">
     <Key>
@@ -40,6 +54,18 @@
     </Key>
     <Property Name="Id" Type="bigint" Nullable="false" />
   </EntityType>
+  <Association Name="FavoriteBeerBeer">
+    <End Role="FavoriteBeer" Type="TweetBeer.Store.FavoriteBeerSet" Multiplicity="1" />
+    <End Role="Beer" Type="TweetBeer.Store.Beer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FavoriteBeer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Beer">
+        <PropertyRef Name="FavoriteBeer_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_StoutBeer_inherits_Beer">
     <End Role="Beer" Type="TweetBeer.Store.Beer" Multiplicity="1" />
     <End Role="StoutBeer" Type="TweetBeer.Store.Beer_StoutBeer" Multiplicity="0..1" />
@@ -70,6 +96,11 @@
       <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="TweetBeer" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
         <EntityContainer Name="TweetBeerContainer" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Beer" EntityType="TweetBeer.Beer" />
+          <EntitySet Name="FavoriteBeerSet" EntityType="TweetBeer.FavoriteBeer" />
+          <AssociationSet Name="FavoriteBeerBeer" Association="TweetBeer.FavoriteBeerBeer">
+            <End Role="FavoriteBeer" EntitySet="FavoriteBeerSet" />
+            <End Role="Beer" EntitySet="Beer" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Beer" Abstract="true">
           <Key>
@@ -80,9 +111,23 @@
           <Property Type="String" Name="Country" Nullable="false" />
           <Property Type="Double" Name="Weight" Nullable="false" />
           <Property Type="Double" Name="InitialWeight" Nullable="false" />
+          <NavigationProperty Name="FavoriteBeer" Relationship="TweetBeer.FavoriteBeerBeer" FromRole="Beer" ToRole="FavoriteBeer" />
         </EntityType>
         <EntityType Name="StoutBeer" BaseType="TweetBeer.Beer" />
         <EntityType Name="PremiumBeer" BaseType="TweetBeer.Beer" />
+        <EntityType Name="FavoriteBeer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Beer" Relationship="TweetBeer.FavoriteBeerBeer" FromRole="FavoriteBeer" ToRole="Beer" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" />
+          <Property Type="String" Name="User" Nullable="false" />
+        </EntityType>
+        <Association Name="FavoriteBeerBeer">
+          <End Type="TweetBeer.FavoriteBeer" Role="FavoriteBeer" Multiplicity="1" />
+          <End Type="TweetBeer.Beer" Role="Beer" Multiplicity="*" />
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -110,6 +155,23 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="FavoriteBeerSet">
+      <EntityTypeMapping TypeName="IsTypeOf(TweetBeer.FavoriteBeer)">
+        <MappingFragment StoreEntitySet="FavoriteBeerSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="User" ColumnName="User" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FavoriteBeerBeer" TypeName="TweetBeer.FavoriteBeerBeer" StoreEntitySet="Beer">
+      <EndProperty Name="FavoriteBeer">
+        <ScalarProperty Name="Id" ColumnName="FavoriteBeer_Id" />
+      </EndProperty>
+      <EndProperty Name="Beer">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>
@@ -128,7 +190,7 @@
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram Name="TweetBeer" ZoomLevel="131" >
+      <Diagram Name="TweetBeer" ZoomLevel="129" >
         <EntityTypeShape EntityType="TweetBeer.Beer" Width="1.5" PointX="2.5" PointY="0.75" Height="1.9802864583333331" />
         <EntityTypeShape EntityType="TweetBeer.StoutBeer" Width="1.5" PointX="1" PointY="3.625" Height="1.018779296875" />
         <InheritanceConnector EntityType="TweetBeer.StoutBeer" ManuallyRouted="false" >
@@ -144,6 +206,11 @@
           <ConnectorPoint PointX="4.625" PointY="3.25" />
           <ConnectorPoint PointX="4.625" PointY="3.625" />
         </InheritanceConnector>
+        <EntityTypeShape EntityType="TweetBeer.FavoriteBeer" Width="1.5" PointX="5.375" PointY="1.125" Height="1.787985026041667" />
+        <AssociationConnector Association="TweetBeer.FavoriteBeerBeer">
+          <ConnectorPoint PointX="5.375" PointY="2.0189925130208337" />
+          <ConnectorPoint PointX="4" PointY="2.0189925130208337" />
+        </AssociationConnector>
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 06/27/2012 19:35:15
--- Generated from EDMX file: C:\Users\aluno\Desktop\git\IntroDotNetCSharp\src\Day-8\CSharpEntityFramework.Web\CSharpEntityFramework.Web\Models\TweetBeer.edmx
+-- Date Created: 06/29/2012 19:58:54
+-- Generated from EDMX file: C:\Users\aluno\Desktop\git\IntroDotNetCSharp\src\Day-10\TweetBeer.Web\TweetBeer.Web\Models\TweetBeer.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -48,7 +48,16 @@ CREATE TABLE [dbo].[Beer] (
     [Name] nvarchar(255)  NOT NULL,
     [Country] nvarchar(max)  NOT NULL,
     [Weight] float  NOT NULL,
-    [InitialWeight] float  NOT NULL
+    [InitialWeight] float  NOT NULL,
+    [FavoriteBeer_Id] int  NOT NULL
+);
+GO
+
+-- Creating table 'FavoriteBeerSet'
+CREATE TABLE [dbo].[FavoriteBeerSet] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [CreationDate] datetime  NOT NULL,
+    [User] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -74,6 +83,12 @@ ADD CONSTRAINT [PK_Beer]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
+-- Creating primary key on [Id] in table 'FavoriteBeerSet'
+ALTER TABLE [dbo].[FavoriteBeerSet]
+ADD CONSTRAINT [PK_FavoriteBeerSet]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
 -- Creating primary key on [Id] in table 'Beer_StoutBeer'
 ALTER TABLE [dbo].[Beer_StoutBeer]
 ADD CONSTRAINT [PK_Beer_StoutBeer]
@@ -89,6 +104,20 @@ GO
 -- --------------------------------------------------
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
+
+-- Creating foreign key on [FavoriteBeer_Id] in table 'Beer'
+ALTER TABLE [dbo].[Beer]
+ADD CONSTRAINT [FK_FavoriteBeerBeer]
+    FOREIGN KEY ([FavoriteBeer_Id])
+    REFERENCES [dbo].[FavoriteBeerSet]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_FavoriteBeerBeer'
+CREATE INDEX [IX_FK_FavoriteBeerBeer]
+ON [dbo].[Beer]
+    ([FavoriteBeer_Id]);
+GO
 
 -- Creating foreign key on [Id] in table 'Beer_StoutBeer'
 ALTER TABLE [dbo].[Beer_StoutBeer]
