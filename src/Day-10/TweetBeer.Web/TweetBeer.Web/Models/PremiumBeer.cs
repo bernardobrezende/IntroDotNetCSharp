@@ -10,5 +10,12 @@
             }
             set { }
         }
+
+        public PremiumBeer() { }
+
+        public PremiumBeer(string name, double initialWeight, string country = default(string))
+            : base(name, country, initialWeight)
+        {
+        }
     }
 }
