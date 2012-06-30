@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 06/29/2012 20:29:17
+-- Date Created: 06/29/2012 21:15:47
 -- Generated from EDMX file: C:\Users\aluno\Desktop\git\IntroDotNetCSharp\src\Day-10\TweetBeer.Web\TweetBeer.Web\Models\TweetBeer.edmx
 -- --------------------------------------------------
 
@@ -54,8 +54,7 @@ CREATE TABLE [dbo].[Beer] (
     [Name] nvarchar(255)  NOT NULL,
     [Country] nvarchar(max)  NOT NULL,
     [Weight] float  NOT NULL,
-    [InitialWeight] float  NOT NULL,
-    [FavoriteBeer_Id] int  NULL
+    [InitialWeight] float  NOT NULL
 );
 GO
 
@@ -63,7 +62,8 @@ GO
 CREATE TABLE [dbo].[FavoriteBeerSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [CreationDate] datetime  NOT NULL,
-    [User] nvarchar(max)  NOT NULL
+    [User] nvarchar(max)  NOT NULL,
+    [Beer_Id] bigint  NOT NULL
 );
 GO
 
@@ -111,18 +111,18 @@ GO
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
 
--- Creating foreign key on [FavoriteBeer_Id] in table 'Beer'
-ALTER TABLE [dbo].[Beer]
-ADD CONSTRAINT [FK_FavoriteBeerBeer]
-    FOREIGN KEY ([FavoriteBeer_Id])
-    REFERENCES [dbo].[FavoriteBeerSet]
+-- Creating foreign key on [Beer_Id] in table 'FavoriteBeerSet'
+ALTER TABLE [dbo].[FavoriteBeerSet]
+ADD CONSTRAINT [FK_BeerFavoriteBeer]
+    FOREIGN KEY ([Beer_Id])
+    REFERENCES [dbo].[Beer]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
--- Creating non-clustered index for FOREIGN KEY 'FK_FavoriteBeerBeer'
-CREATE INDEX [IX_FK_FavoriteBeerBeer]
-ON [dbo].[Beer]
-    ([FavoriteBeer_Id]);
+-- Creating non-clustered index for FOREIGN KEY 'FK_BeerFavoriteBeer'
+CREATE INDEX [IX_FK_BeerFavoriteBeer]
+ON [dbo].[FavoriteBeerSet]
+    ([Beer_Id]);
 GO
 
 -- Creating foreign key on [Id] in table 'Beer_StoutBeer'

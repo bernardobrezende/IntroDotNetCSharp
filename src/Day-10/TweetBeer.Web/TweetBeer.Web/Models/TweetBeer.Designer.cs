@@ -18,7 +18,7 @@ using System.Runtime.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("TweetBeer", "FavoriteBeerBeer", "FavoriteBeer", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TweetBeer.Web.Models.FavoriteBeer), "Beer", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TweetBeer.Web.Models.Beer))]
+[assembly: EdmRelationshipAttribute("TweetBeer", "BeerFavoriteBeer", "Beer", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TweetBeer.Web.Models.Beer), "FavoriteBeer", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TweetBeer.Web.Models.FavoriteBeer))]
 
 #endregion
 
@@ -274,16 +274,16 @@ namespace TweetBeer.Web.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("TweetBeer", "FavoriteBeerBeer", "FavoriteBeer")]
+        [EdmRelationshipNavigationPropertyAttribute("TweetBeer", "BeerFavoriteBeer", "FavoriteBeer")]
         public FavoriteBeer FavoriteBeer
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<FavoriteBeer>("TweetBeer.FavoriteBeerBeer", "FavoriteBeer").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<FavoriteBeer>("TweetBeer.BeerFavoriteBeer", "FavoriteBeer").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<FavoriteBeer>("TweetBeer.FavoriteBeerBeer", "FavoriteBeer").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<FavoriteBeer>("TweetBeer.BeerFavoriteBeer", "FavoriteBeer").Value = value;
             }
         }
         /// <summary>
@@ -295,13 +295,13 @@ namespace TweetBeer.Web.Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<FavoriteBeer>("TweetBeer.FavoriteBeerBeer", "FavoriteBeer");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<FavoriteBeer>("TweetBeer.BeerFavoriteBeer", "FavoriteBeer");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<FavoriteBeer>("TweetBeer.FavoriteBeerBeer", "FavoriteBeer", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<FavoriteBeer>("TweetBeer.BeerFavoriteBeer", "FavoriteBeer", value);
                 }
             }
         }
@@ -422,18 +422,34 @@ namespace TweetBeer.Web.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("TweetBeer", "FavoriteBeerBeer", "Beer")]
-        public EntityCollection<Beer> Beer
+        [EdmRelationshipNavigationPropertyAttribute("TweetBeer", "BeerFavoriteBeer", "Beer")]
+        public Beer Beer
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Beer>("TweetBeer.FavoriteBeerBeer", "Beer");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Beer>("TweetBeer.BeerFavoriteBeer", "Beer").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Beer>("TweetBeer.BeerFavoriteBeer", "Beer").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Beer> BeerReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Beer>("TweetBeer.BeerFavoriteBeer", "Beer");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Beer>("TweetBeer.FavoriteBeerBeer", "Beer", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Beer>("TweetBeer.BeerFavoriteBeer", "Beer", value);
                 }
             }
         }
