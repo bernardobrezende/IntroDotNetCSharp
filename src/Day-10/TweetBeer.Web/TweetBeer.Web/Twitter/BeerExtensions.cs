@@ -18,6 +18,8 @@ namespace TweetBeer.Web.Twitter
 
             var requestToken = tw.GetRequestToken();
 
+            //tw.AuthenticateWith(requestToken.Token, requestToken.TokenSecret);
+
             tw.AuthenticateWith(
                 ConfigurationManager.AppSettings["TwitterToken"],
                 ConfigurationManager.AppSettings["TwitterTokenSecret"]);
