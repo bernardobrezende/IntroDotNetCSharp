@@ -32,7 +32,7 @@
     <Property Name="Country" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Weight" Type="float" Nullable="false" />
     <Property Name="InitialWeight" Type="float" Nullable="false" />
-    <Property Name="FavoriteBeer_Id" Type="int" Nullable="false" />
+    <Property Name="FavoriteBeer_Id" Type="int" Nullable="true" />
   </EntityType>
   <EntityType Name="FavoriteBeerSet">
     <Key>
@@ -55,7 +55,7 @@
     <Property Name="Id" Type="bigint" Nullable="false" />
   </EntityType>
   <Association Name="FavoriteBeerBeer">
-    <End Role="FavoriteBeer" Type="TweetBeer.Store.FavoriteBeerSet" Multiplicity="1" />
+    <End Role="FavoriteBeer" Type="TweetBeer.Store.FavoriteBeerSet" Multiplicity="0..1" />
     <End Role="Beer" Type="TweetBeer.Store.Beer" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="FavoriteBeer">
@@ -125,7 +125,7 @@
           <Property Type="String" Name="User" Nullable="false" />
         </EntityType>
         <Association Name="FavoriteBeerBeer">
-          <End Type="TweetBeer.FavoriteBeer" Role="FavoriteBeer" Multiplicity="1" />
+          <End Type="TweetBeer.FavoriteBeer" Role="FavoriteBeer" Multiplicity="0..1" />
           <End Type="TweetBeer.Beer" Role="Beer" Multiplicity="*" />
         </Association>
       </Schema>
@@ -171,6 +171,7 @@
       <EndProperty Name="Beer">
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
+      <Condition ColumnName="FavoriteBeer_Id" IsNull="false" />
     </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>

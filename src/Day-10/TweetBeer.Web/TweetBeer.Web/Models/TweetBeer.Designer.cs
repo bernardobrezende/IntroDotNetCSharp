@@ -18,7 +18,7 @@ using System.Runtime.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("TweetBeer", "FavoriteBeerBeer", "FavoriteBeer", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(TweetBeer.Web.Models.FavoriteBeer), "Beer", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TweetBeer.Web.Models.Beer))]
+[assembly: EdmRelationshipAttribute("TweetBeer", "FavoriteBeerBeer", "FavoriteBeer", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TweetBeer.Web.Models.FavoriteBeer), "Beer", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TweetBeer.Web.Models.Beer))]
 
 #endregion
 

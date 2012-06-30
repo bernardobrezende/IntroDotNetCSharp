@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 06/29/2012 19:58:54
+-- Date Created: 06/29/2012 20:29:17
 -- Generated from EDMX file: C:\Users\aluno\Desktop\git\IntroDotNetCSharp\src\Day-10\TweetBeer.Web\TweetBeer.Web\Models\TweetBeer.edmx
 -- --------------------------------------------------
 
@@ -17,6 +17,9 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_FavoriteBeerBeer]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Beer] DROP CONSTRAINT [FK_FavoriteBeerBeer];
+GO
 IF OBJECT_ID(N'[dbo].[FK_StoutBeer_inherits_Beer]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Beer_StoutBeer] DROP CONSTRAINT [FK_StoutBeer_inherits_Beer];
 GO
@@ -30,6 +33,9 @@ GO
 
 IF OBJECT_ID(N'[dbo].[Beer]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Beer];
+GO
+IF OBJECT_ID(N'[dbo].[FavoriteBeerSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[FavoriteBeerSet];
 GO
 IF OBJECT_ID(N'[dbo].[Beer_StoutBeer]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Beer_StoutBeer];
@@ -49,7 +55,7 @@ CREATE TABLE [dbo].[Beer] (
     [Country] nvarchar(max)  NOT NULL,
     [Weight] float  NOT NULL,
     [InitialWeight] float  NOT NULL,
-    [FavoriteBeer_Id] int  NOT NULL
+    [FavoriteBeer_Id] int  NULL
 );
 GO
 
